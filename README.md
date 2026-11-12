@@ -2,7 +2,6 @@
 -- =============================================================================
 -- COLLEGE LIBRARY MANAGEMENT SYSTEM
 -- File: library_project.sql
--- Covers: Questions C2 to C14
 -- =============================================================================
 create database librarydb1;
 USE librarydb1;
@@ -224,7 +223,7 @@ END //
 DELIMITER ;
 
 -- Test procedure execution:
-CALL member_history(1);
+call mem_history;
 
 
 -- -----------------------------------------------------------------------------
