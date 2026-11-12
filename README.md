@@ -4,9 +4,47 @@
 -- File: library_project.sql
 -- Covers: Questions C2 to C14
 -- =============================================================================
+create database librarydb1;
+USE librarydb1;
+create table members(mem_id int, mem_name varchar(20), mem_type varchar(20), joined_date date);
+create table books(book_is int, author varchar(20), category varchar(20), price int, copies_available int);
+create table issues(issue_id int, mem_id int, book_id int, issue_date date, due_date date, return_date date);
 
-USE librarydb;
+INSERT INTO members (mem_id, mem_name, mem_type, joined_date) VALUES
+(1, 'Aarav Sharma', 'Student', '2025-01-15'),
+(2, 'Priya Patel', 'Faculty', '2024-08-20'),
+(3, 'Rohan Verma', 'Regular', '2025-03-10'),
+(4, 'Ananya Nair', 'Student', '2025-06-05'),
+(5, 'Vikram Singh', 'Premium', '2024-11-12'),
+(6, 'Sneha Gupta', 'Regular', '2025-09-01'),
+(7, 'Karthik Rao', 'Student', '2026-01-18'),
+(8, 'Meera Joshi', 'Faculty', '2024-05-30'),
+(9, 'Arjun Reddy', 'Premium', '2025-12-14'),
+(10, 'Divya Menon', 'Regular', '2026-02-22');
 
+INSERT INTO books (book_is, author, category, price, copies_available) VALUES
+(101, 'R.K. Narayan', 'Fiction', 350, 5),
+(102, 'Arundhati Roy', 'Fiction', 499, 3),
+(103, 'A.P.J. Abdul Kalam', 'Biography', 299, 8),
+(104, 'Sudha Murty', 'Literature', 250, 10),
+(105, 'Chetan Bhagat', 'Romance', 220, 4),
+(106, 'Amish Tripathi', 'Mythology', 399, 6),
+(107, 'Vikram Seth', 'Drama', 650, 2),
+(108, 'Ruskin Bond', 'Children', 199, 7),
+(109, 'Jhumpa Lahiri', 'Fiction', 420, 5),
+(110, 'Shashi Tharoor', 'History', 550, 3);
+
+INSERT INTO issues (issue_id, mem_id, book_id, issue_date, due_date, return_date) VALUES
+(1001, 1, 101, '2026-08-01', '2026-08-15', '2026-08-12'),
+(1002, 2, 103, '2026-08-05', '2026-08-19', '2026-08-18'),
+(1003, 3, 105, '2026-08-10', '2026-08-24', '2026-08-26'),
+(1004, 4, 102, '2026-09-02', '2026-09-16', '2026-09-15'),
+(1005, 5, 106, '2026-09-12', '2026-09-26', '2026-09-25'),
+(1006, 6, 104, '2026-10-01', '2026-10-15', '2026-10-14'),
+(1007, 7, 108, '2026-10-10', '2026-10-24', '2026-10-28'),
+(1008, 8, 110, '2026-10-20', '2026-11-03', '2026-11-01'),
+(1009, 9, 107, '2026-11-01', '2026-11-15', NULL),
+(1010, 10, 109, '2026-11-05', '2026-11-19', NULL);
 -- -----------------------------------------------------------------------------
 -- C2: Total counts of members, books, and issue records
 -- -----------------------------------------------------------------------------
